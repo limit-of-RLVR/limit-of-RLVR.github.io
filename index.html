@@ -94,7 +94,7 @@
             </span>
           </div> -->
 
-          <div class="is-size-5 publication-authors">
+          <!-- <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>ByteDance Seed</span>
             &nbsp;
             <span class="author-block"><sup>2</sup>Institute for AI Industry Research (AIR), Tsinghua University</span>
@@ -104,7 +104,100 @@
           </div>
           <div class="is-size-6 publication-authors">
             <span class="author-block">*Full author list in Contributions</span>
+          </div> -->
+
+          <div class="publication-authors">
+            <!-- 作者列表 -->
+            <div class="is-size-4 author-list">
+              <span class="author-block">
+                <span class="author-name">Yang Yue</span><sup class="affiliation">1</sup><sup class="contribution">*</sup><sup class="contribution">†</sup>
+              </span>
+              <span class="author-block">
+                <span class="author-name">Zhiqi Chen</span><sup class="affiliation">1</sup><sup class="contribution">*</sup>
+              </span>
+              <span class="author-block">
+                <span class="author-name">Andrew Zhao</span><sup class="affiliation">1</sup>
+              </span>
+              <span class="author-block">
+                <span class="author-name">Rui Lu</span><sup class="affiliation">1</sup>
+              </span>
+              <span class="author-block">
+                <span class="author-name">Zhaokai Wang</span><sup class="affiliation">2</sup>
+              </span>
+              <span class="author-block">
+                <span class="author-name">Yang Yue</span><sup class="affiliation">1</sup>
+              </span>
+              <span class="author-block">
+                <span class="author-name">Shiji Song</span><sup class="affiliation">1</sup>
+              </span>
+              <span class="author-block">
+                and <span class="author-name">Gao Huang</span><sup class="affiliation">1</sup><sup class="contribution">‡</sup>
+              </span>
+            </div>
+          
+            <!-- 机构信息 -->
+            <div class="institutions is-size-5">
+              <span class="institution"><sup>1</sup> Tsinghua University, LeapLab</span>
+              <span class="institution">&nbsp;&nbsp;</span> <!-- 间隔符 -->
+              <span class="institution"><sup>2</sup> Shanghai Jiao Tong University</span>
+            </div>
+          
+            <!-- 贡献说明 -->
+            <div class="contribution-notes is-size-5">
+              <span class="note"><sup>*</sup> Equal Contribution</span>
+              <span class="note">&nbsp;&nbsp;</span>
+              <span class="note"><sup>†</sup> Project Lead</span>
+              <span class="note">&nbsp;&nbsp;</span>
+              <span class="note"><sup>‡</sup> Corresponding Author</span>
+            </div>
+          
+            <!-- 通讯作者邮箱（可选，如需展示） -->
+            <div class="corresponding-authors is-size-5">
+              Corresponding authors: 
+              <a href="mailto:{le-y22,zq-chen23}@mails.tsinghua.edu.cn">
+                {le-y22,zq-chen23}@mails.tsinghua.edu.cn
+              </a>, 
+              <a href="mailto:gaohuang@tsinghua.edu.cn">
+                gaohuang@tsinghua.edu.cn
+              </a>
+            </div>
           </div>
+          
+          <!-- 可选样式（建议添加到CSS文件） -->
+          <style>
+          .publication-authors {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+          }
+          .author-list {
+            display: block;
+            margin-bottom: 0.5em;
+          }
+          .author-block {
+            display: inline-block;
+            margin-right: 0.3em;
+            vertical-align: top;
+          }
+          .institutions {
+            display: block;
+            font-size: 0.9em;
+            margin: 0.5em 0;
+            color: #666;
+          }
+          .contribution-notes {
+            font-size: 0.85em;
+            color: #333;
+            margin-top: 0.3em;
+          }
+          .affiliation {
+            color: #333;
+            font-size: 0.9em;
+          }
+          .contribution {
+            font-size: 0.8em;
+            vertical-align: super;
+          }
+          </style>
 
           <div class="column has-text-centered">
             <div class="publication-links">
