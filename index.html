@@ -286,19 +286,14 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Introducing Our Work</h2>
         <div class="content has-text-justified">
-          <p>
-            Recent advances in reasoning-centric large language models (LLMs), such as OpenAI-o1, DeepSeek-R1, and Kimi-1.5, have been driven by <i>Reinforcement Learning with Verifiable Rewards</i> (RLVR). Unlike traditional fine-tuning, RLVR optimizes models using automated rewards (e.g., correct math solutions or passing code tests), enabling scalable self-improvement. While RLVR enhances reasoning behaviors like self-correction and iterative refinement, a critical question remains: 
-          </p>
-          <p>
-            <i><b>Does RLVR truly expand a model's reasoning capacity, or is improvement fundamentally bounded?</b></i>
-          </p>
-          
-          
-            <!-- We propose the <b>D</b>ecoupled Clip and <b>D</b>ynamic s<b>A</b>mpling <b>P</b>olicy <b>O</b>ptimization (DAPO) algorithm. By making our work publicly available, we provide the broader research community and society with practical access to scalable reinforcement learning, enabling all to benefit from these advancements. Our system is based on the awesome <a href="https://github.com/volcengine/verl">verl</a> framework. Thanks for their great work!
-            Applying DAPO training to Qwen2.5-32B base model proves to outperform the previous state-of-the-art DeepSeek-R1-Zero-Qwen-32B on AIME 2024, achieving <span style="font-weight:900;">50%</span> accuracy with <span style="font-weight: 900;">50%</span> less training steps.  -->
-          </p>
-          <p>
-            Our work investigates this by evaluating models using <i>pass@k</i>—measuring success if any of <i>k</i> sampled solutions is correct. Surprisingly, while RL-trained models outperform base models at small <i>k</i> (e.g., pass@1), base models consistently surpass them as <i>k</i> increases. This reveals that RLVR biases sampling toward efficient reasoning paths rather than creating new ones, limiting exploration and capping gains at the base model's inherent capacity.
+          <p>  
+            Recent breakthroughs in reasoning-focused large language models (LLMs) like OpenAI-o1, DeepSeek-R1, and Kimi-1.5 have largely relied on <i>Reinforcement Learning with Verifiable Rewards</i> (RLVR), which replaces human annotations with automated rewards (e.g., verified math solutions or passing code tests) to scale self-improvement. While RLVR enhances reasoning behaviors such as self-reflection and iterative refinement, we challenge a core assumption:  
+          </p>  
+          <p style="font-size: 1.25rem;">  
+          <i><b>Does RLVR actually expand LLMs' reasoning capabilities, or does it merely optimize existing ones?</b></i>  
+          </p>  
+          <p>  
+          By evaluating models via <i>pass@k</i>, where success requires just one correct solution among <i>k</i> attempts, we uncover that RL-trained models excel at low <i>k</i> (e.g., pass@1) but are consistently <i>outperformed by base models</i> at high <i>k</i> (e.g., pass@256). This demonstrates that RLVR <i>narrows the model's exploration</i>, favoring known high-reward paths instead of discovering new reasoning strategies. Crucially, all correct solutions from RL-trained models already exist in the base model's distribution, proving RLVR enhances <i>sampling efficiency</i>, not reasoning capacity, while inadvertently shrinking the solution space.  
           </p>
         </div>
       </div>
