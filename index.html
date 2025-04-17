@@ -350,32 +350,43 @@
     <!-- Fully Open-Source -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Fully Open-Source</h2>
+        <h2 class="title is-3">Experiments</h2>
         <div class="content has-text-justified">
           <p>
-            To benefit the broader research community, we fully open-source the recipe of our RL training, including algorithm details, dataset, verifiers, model weights and infrastructures. We utilize <a href="https://github.com/volcengine/verl">verl</a> to perform DAPO training using the Qwen-32B-Base model from scratch with 128 H20 GPUs. Our open-source experiments were conducted on the Volcano Engine Machine Learning Platform. 
-            We will provide a full reproduction guideline on the Volcano Engine platform 
-            to help users replicate our experiments.
+            <span style="font-size: 1.25em;">We conducted experiments across <b>three representative domains</b> to evaluate the effect of RLVR on the reasoning ability boundaries of base and RLVR models.</span> <br>
           </p>
-          <h3 class="title is-4">Datasets</h3>
+          <h3 class="title is-4">Math</h3>
+          <h2 class="subtitle has-text-centered">
+            <img src="./static/images/Math.png"/>
+          </h2>
           <p>
-            We provide training and validation datasets for DAPO training.
-            <ul>
-              <li>
-                Training: <a href="https://huggingface.co/datasets/BytedTsinghua-SIA/DAPO-Math-17k">DAPO-Math-17k</a>, an elaborately curated math dataset. 
-              </li>
-              <li>
-                Validation: <a href="https://huggingface.co/datasets/BytedTsinghua-SIA/AIME-2024">AIME 2024</a> dataset.
-              </li>
-            </ul>
+            In the experiment on <b>mathematical reasoning</b>, to assess the effect of RLVR on reasoning ability boundaries, we utilized multiple LLM families including Qwen-2.5 (7B/14B/32B base variants) and LLaMA-3.1-8B, along with RLVR-trained models from SimpleRLZoo and the RL model Oat-Zero-7B for comparison. 
+            We compared the pass@<i>k</i>curves of base and zero-RL models on benchmarks of varying difficulty such as GSM8K, MATH500, Minerva, Olympiad, AIME24, and AMC23. 
+            We found that when <i>k</i> was small, RL-trained models outperformed base models, indicating that RLVR increased the likelihood of sampling correct responses. 
+            However, as <i>k</i> increased, base models consistently caught up and eventually surpassed RL-trained models, showing that the base model had a broader coverage of solvable problems. 
+            Additionally, we conducted a CoT case analysis of the base model's sampled correct chains of thought for the hardest AIME24 questions, and introduced a filtering mechanism to eliminate guessable problems to assess the validity of the CoT, finding that even on the hardest questions in the filtered set, problem-solving primarily resulted from sampling valid reasoning paths, suggesting that pass@<i>k</i> at large <i>k</i> values could serve as a relatively accurate indicator of a model's reasoning boundary.
           </p>
-          <h3 class="title is-4">Verifier</h3>
+          <h3 class="title is-4">Coding</h3>
+          <h2 class="subtitle has-text-centered">
+            <img src="./static/images/Coding.png" style="display: block; margin: 0 auto; width: 75%;"/>
+          </h2>
           <p>
-            We adopt a simple but robust <a href="https://github.com/volcengine/verl/blob/gm-tyx/puffin/main/verl/utils/reward_score/math_dapo.py">rule-based verifier</a> relying on string normalization and matching.
+            In the <b>coding</b> experiment, we adopted the open-source Code-R1 and its RLVR-trained model, CodeR1-Zero-Qwen2.5-7B, which was trained on 12K LeetCode and TACO samples over 832 steps based on Qwen2.5-7B-Instruct-1M. 
+            The models were evaluated on LiveCodeBench v5 (comprising 880 problems from May 2023 to January 2025), HumanEval+, and MBPP+. 
+            The effects of RLVR on these code generation benchmarks were consistent with those in mathematical benchmarks. 
+            For example, on LiveCodeBench, the RLVR-trained model had a higher pass@1 score (28.1%) compared to the original model (23.8%). However, when sampling 128 times, the original model could solve approximately 50% of the coding problems, while the RLVR model solved only 42.8%. 
+            The original model's pass@<i>k</i> curve had a steeper slope at <i>k</i>=128, indicating that it had more potential for further improvement and a broader coverage boundary than the RLVR-trained model.
           </p>
-          <h3 class="title is-4">Training Script</h3>
+          <h3 class="title is-4">Visual Reasoning</h3>
+          <h2 class="subtitle has-text-centered">
+            <img src="./static/images/qwenvl_7b_instruct_coverage_filter.png" style="display: block; margin: 0 auto; width: 50%;"/>
+          </h2>
           <p>
-            We provide <a href="https://github.com/volcengine/verl/blob/gm-tyx/puffin/main/recipe/dapo/run_dapo_qwen2.5_32b.sh">the out-of-the-box script</a> for DAPO training reproduction.
+            In the experiment on <b>visual reasoning</b>, we focused on mathematical reasoning within visual contexts as a representative task. 
+            We employed the EasyR1 framework to train Qwen-2.5-VL-7B on Geometry3K and evaluated its visual reasoning capabilities on filtered subsets of MathVista-TestMini and MathVision-TestMini, after removing multiple-choice questions which could be easily guessed. 
+            The results, as shown in the relevant figures, demonstrated that the effects of RLVR on visual reasoning were highly consistent with those observed in math and coding benchmarks. 
+            That is, the original model exhibited broader coverage of solvable questions. To ensure the validity of the increase in coverage and rule out random guessing with incorrect chains of thought (CoT), we manually inspected a subset of the most challenging problems with an average accuracy below 5%. 
+            For both the original and RL models, we found that in 7 out of 8 of these problems, there was at least one correct CoT, indicating that the increase in coverage was mainly due to sampling valid reasoning paths rather than lucky guesses.
           </p>
         </div>
       </div>
@@ -476,7 +487,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a> and licensed under a <a rel="license"
+            This website is adapted from <a href="https://dapo-sia.github.io/">DAPO</a> and licensed under a <a rel="license"
                                                 href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
