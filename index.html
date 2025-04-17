@@ -116,10 +116,10 @@
                 <a href="https://zhiqichen05.github.io/" class="author-name">Zhiqi Chen</a><sup class="affiliation">1</sup><sup class="contribution">*</sup>
               </span>
               <span class="author-block">
-                <a href="https://andrewzh112.github.io/" class="author-name">Andrew Zhao</a><sup class="affiliation">1</sup>
+                <a href="https://lr32768.github.io/" class="author-name">Rui Lu</a><sup class="affiliation">1</sup>
               </span>
               <span class="author-block">
-                <a href="https://lr32768.github.io/" class="author-name">Rui Lu</a><sup class="affiliation">1</sup>
+                <a href="https://andrewzh112.github.io/" class="author-name">Andrew Zhao</a><sup class="affiliation">1</sup>
               </span>
               <span class="author-block">
                 <a href="https://www.wzk.plus/" class="author-name">Zhaokai Wang</a><sup class="affiliation">2</sup>
@@ -314,6 +314,31 @@
           While all reasoning paths in the RLVR model are present in the base model, the base model includes many incorrect paths, <br>
           leading to low sampling efficiency. RLVR training biases the distribution towards rewarded paths, improving efficiency.
         </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Conclusion -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Conclusion</h2>
+        <div class="content has-text-justified">
+          <ol>
+            <li>
+              <span style="font-size: 1.25em;"><b>RLVR does not create new reasoning abilities</b></span> - Our analysis shows that while RLVR improves sampling efficiency, it fails to generate fundamentally new reasoning patterns beyond those already encoded in the base model, leaving the reasoning boundary unchanged.
+            </li>
+            <li>
+              <span style="font-size: 1.25em;"><b>Current RL falls short of the base model's potential</b></span> - Despite optimizing for performance, RL algorithms do not reach the theoretical reasoning upper bound defined by the base model's capabilities, indicating a gap in their effectiveness.
+            </li>
+            <li>
+              <span style="font-size: 1.25em;"><b>Distillation expands reasoning boundaries more effectively</b></span> - Unlike RLVR, distillation introduces novel reasoning patterns and pushes the limits of the base model, suggesting alternative approaches may be needed for true advancement in LLM reasoning.
+            </li>
+          </ol>
+        </div>
       </div>
     </div>
   </div>
