@@ -301,6 +301,321 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <!-- Q&A Section -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered" style="margin-bottom: 3rem;">
+          <span class="icon-text">
+            <span class="icon">
+              <i class="fas fa-comments" style="color: #2196F3;"></i>
+            </span>
+            <span>Q&A</span>
+          </span>
+        </h2>
+
+        <!-- Q&A Item 1 -->
+        <div class="qa-card">
+          <div class="qa-question">
+            <div class="q-marker">
+              <span class="q-number" style="font-size: 2em;">01</span>
+              <span class="q-icon">Q</span>
+            </div>
+            <h3 class="question-text">
+              You're using pass@<i>k</i> instead of majority vote—doesn't that make the results invalid?
+            </h3>
+          </div>
+          <div class="qa-answer">
+            <div class="a-marker">
+              <span class="a-icon">A</span>
+            </div>
+            <div class="answer-text">
+              <p>
+                [1/3] We use pass@<i>k</i> <b>not to measure practical utility</b>, but to explore the <b>reasoning capacity boundary</b> of LLMs, as outlined in our paper. <br><br>
+                [2/3] If a model can solve a difficult problem at least once in <i>k</i> samples, we consider that problem within its potential reasoning scope. If RL training truly expands reasoning, we would expect the RL model to solve more such problems than the base. <br><br>
+                [3/3] However, we observe the opposite: <b>RLVR models often solve <i>fewer</i> problems at large <i>k</i></b>, suggesting a narrowing of this boundary. This implies RLVR is optimizing within the base model's capabilities, not extending them.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q&A Item 2 -->
+        <div class="qa-card">
+          <div class="qa-question">
+            <div class="q-marker">
+              <span class="q-number" style="font-size: 2em;">02</span>
+              <span class="q-icon">Q</span>
+            </div>
+            <h3 class="question-text">
+              Isn't pass@<i>k</i> meaningless since you could eventually guess the right answer through randomly sampling <i>k</i> times?
+            </h3>
+          </div>
+          <div class="qa-answer">
+            <div class="a-marker">
+              <span class="a-icon">A</span>
+            </div>
+            <div class="answer-text">
+              <p>
+                [1/3] It's true that pass@1024 can be noisy for datasets like AIME whose answers are within limited integer space. But we also evaluated <b>coding benchmarks</b>, where guessing is nearly impossible to pass unit test case, and yet similar patterns hold, with base models performing better at large <i>k</i>. <br><br>
+                [2/3] For <b>AIME</b> and <b>GSM8K</b>, we manually inspected the CoT outputs and found that, in most cases, the base model produced <b>at least one <i>correct</i> reasoning path</b>—not just lucky guesses. <br><br>
+                [3/3] On datasets usch <b>MATH500</b>, where answers involve complex forms (roots, fractions, symbolic math) and are hard to guess, we again observed similar trends. <br><br>
+                Together, these results highlight the often underappreciated <b>reasoning potential of base models</b>. We're considering including a random sampling baseline in future work.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q&A Item 3 -->
+        <div class="qa-card">
+          <div class="qa-question">
+            <div class="q-marker">
+              <span class="q-number" style="font-size: 2em;">03</span>
+              <span class="q-icon">Q</span>
+            </div>
+            <h3 class="question-text">
+              <b>Isn't it common sense that RL should turn pass@<i>k</i> into pass@1?</b>
+            </h3>
+          </div>
+          <div class="qa-answer">
+            <div class="a-marker">
+              <span class="a-icon">A</span>
+            </div>
+            <div class="answer-text">
+              <p>
+                It's not surprising that RLVR turns pass@<i>k</i> into pass@1—that's what RL is designed for. <br><br>
+                But what's more interesting is that <b>RLVR doesn't do much beyond that in our experiments</b>. It doesn't seem to introduce new reasoning abilities: <b>if the base model can't solve a problem, the RL-trained model still can't either.</b> This clearly highlights the <b>upper bound of RL in reasoning</b>. <br><br>
+                And that's not something obvious. In traditional RL such as Atari or Go, RL is known to <b>explore and discover new strategies, continuously self-improving without an inherent bound</b>. But in the case of LLMs, RLVR seems constrained by the base model's existing capabilities. <br><br>
+                Actually, this phenomenon that <b>RL-trained models perform worse than base models in pass@<i>k</i></b> surprises lots of researchers.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Q&A Item 4 -->
+        <div class="qa-card">
+          <div class="qa-question">
+            <div class="q-marker">
+              <span class="q-number" style="font-size: 2em;">04</span>
+              <span class="q-icon">Q</span>
+            </div>
+            <h3 class="question-text">
+              Does your paper claim that RL can't incentivize reasoning beyond the base model?
+            </h3>
+          </div>
+          <div class="qa-answer">
+            <div class="a-marker">
+              <span class="a-icon">A</span>
+            </div>
+            <div class="answer-text">
+              <p>
+                No, we're not making such a strong claim. Our goal is to <b>present systematic experiments and analyses</b> to explore the question: <i>"Does RL truly expand reasoning capacity in LLMs?"</i> and hope bring some new insights for the community. <br><br>
+                We don't rule out the possibility that <b>scaling up model size and training data</b> could change the outcome. In fact, we're currently working on <b>DeepSeek-V3-base vs. R1-zero</b> to investigate this further.              
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q&A Item 5 -->
+        <div class="qa-card">
+          <div class="qa-question">
+            <div class="q-marker">
+              <span class="q-number" style="font-size: 2em;">05</span>
+              <span class="q-icon">Q</span>
+            </div>
+            <h3 class="question-text">
+              Is your paper saying RL is useless?
+            </h3>
+          </div>
+          <div class="qa-answer">
+            <div class="a-marker">
+              <span class="a-icon">A</span>
+            </div>
+            <div class="answer-text">
+              <p>
+                No. RL remains <b>practically useful</b> because it improves sample efficiency. However, if we want LLMs to solve <b>truly harder problems beyond pretraining</b>, we may need <b>a new training paradigm</b> that can go beyond the base model's ceiling.              
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q&A Item 6 -->
+        <div class="qa-card">
+          <div class="qa-question">
+            <div class="q-marker">
+              <span class="q-number" style="font-size: 2em;">06</span>
+              <span class="q-icon">Q</span>
+            </div>
+            <h3 class="question-text">
+              <b>DeepSeek-Math reported similar results. How is your work different?</b>
+            </h3>
+          </div>
+          <div class="qa-answer">
+            <div class="a-marker">
+              <span class="a-icon">A</span>
+            </div>
+            <div class="answer-text">
+              <p>
+                Yes, DS-Math did observe similar trends, but their study was limited to <b>a single instruction-tuned model</b> and <b>two math benchmarks</b>. <br><br>
+                In contrast, Our work systematically investigates this across <b>true base models</b> in a <b>zero-RL setting</b>, covering <b>multiple LLM families</b> and <b>a wider range of benchmarks</b>. <br><br>
+                We also dive further by providing <b>deeper analyses</b>—including <b>perplexity trends</b>, <b>different RL algorithms</b>, and evaluation against distilled models—offering a more comprehensive view of RLVR's capabilities and limitations. <br><br>
+                We believe the fact that <b>the reasoning scope of RLVR models is bounded by the base model</b> is a notable phenomenon that deserves deeper attention.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .qa-card {
+    background: linear-gradient(145deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin: 2.5rem 0;
+    padding: 2.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .qa-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(255,0,0,0.15); /* 红色 */
+  }
+  
+  .qa-card:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(180deg, #FF0000 0%, #308030 100%); /* 红到绿 */
+  }
+  
+  .q-marker {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .q-number {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #FF0000; /* 红色 */
+    min-width: 50px;
+    position: relative;
+  }
+  
+  .q-number:after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: #308030;
+    border-radius: 50%;
+  }
+  
+  .q-icon, .a-icon {
+    font-size: 1.8rem;
+    font-weight: 800;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .q-icon {
+    background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%); /* 红色渐变 */
+    color: white;
+  }
+  
+  .a-icon {
+    background: linear-gradient(135deg, #308030 0%, #1f6110 100%);
+    color: white;
+  }
+  
+  .qa-question {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .question-text {
+    font-size: 1.3rem;
+    color: #840b0b;
+    margin: 0;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 2rem;
+  }
+  
+  .question-text:before {
+    content: "?";
+    position: absolute;
+    left: 0;
+    top: -0.2em;
+    font-size: 1.8em;
+    color: #FF0000; /* 红色 */
+    opacity: 0.2;
+    font-weight: 800;
+  }
+  
+  .qa-answer {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(76,175,80,0.05);
+    border-radius: 12px;
+    position: relative;
+    margin-left: 3.2rem;
+  }
+  
+  .answer-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #37474f;
+    position: relative;
+    padding-left: 2rem;
+  }
+  
+  .answer-text:before {
+    content: "➤";
+    position: absolute;
+    left: 0;
+    color: #308030;
+    font-size: 1.2em;
+    top: 0.1em;
+  }
+  
+  @media (max-width: 768px) {
+    .qa-card {
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .qa-answer {
+      margin-left: 0;
+    }
+    .question-text {
+      padding-left: 0;
+    }
+    .question-text:before {
+      display: none;
+    }
+  }
+</style>
+
+<section class="section">
+  <div class="container is-max-desktop">
     <!-- Fully Open-Source -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
