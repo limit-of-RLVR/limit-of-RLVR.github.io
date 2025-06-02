@@ -789,11 +789,22 @@
         <h2 class="title is-3">Discussion</h2>
         <div class="content has-text-justified">
           <p>
-            Chen <i>et al.</i> mentioned in their <a href="https://arxiv.org/abs/2505.16400" style="font-size: 1.1rem;"><b>paper</b></a> that after 64 samplings, DeepSeek-R1-Distill-Qwen-7B failed to solve four problems (No. 3, 14, 29, and 30) in the AIME24 dataset. When we conducted samplings with the same parameters, we found that these four problems could be solved. For each problem, we selected an example of correct Chain of Thought (CoT) and answers, which are presented here.
+            Chen <i>et al.</i> mentioned in their <a href="https://arxiv.org/abs/2505.16400" style="font-size: 1.1rem;"><b>paper</b></a> that after 64 samplings, DeepSeek-R1-Distill-Qwen-7B failed to solve four problems (No. <b>3</b>, <b>14</b>, <b>29</b>, and <b>30</b>) in the AIME24 dataset. When we conducted samplings with the same parameters, we found that these four problems could be solved (No. <b>3</b> after 5120 samplings and No. <b>14</b>, <b>29</b>, and <b>30</b> after 1024 samplings). For each problem, we selected an example of correct Chain of Thought (CoT) and answers, which are presented here.
           </p>
           <h2 class="subtitle has-text-centered">
-            <iframe src="./Q4.html" width="100%" height="500px"></iframe>
+            <iframe src="./Q4.html" width="100%" height="2950px"></iframe>
           </h2>
+            <div id="content-container"></div>
+
+            <script>
+              // 使用fetch API加载HTML内容
+              fetch('./Q4.html')
+                .then(response => response.text())
+                .then(data => {
+                  document.getElementById('content-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading file:', error));
+            </script>
         </div>
       </div>
     </div>
