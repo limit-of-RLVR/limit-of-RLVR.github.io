@@ -54,133 +54,147 @@
 </nav>
 
 
-<section class="hero">
+<section class="hero hero-landing">
   <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">
-            Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base model?
-          </h1>
-
-          <h1 class="title is-1 publication-title" style="font-size: 1.5rem;">
-            NeurIPS 2025 Oral<br>
-            ICML 2025 Workshop AI4Math Best Paper Award
-          </h1>
-
-          <div class="publication-authors">
-              <!-- 作者列表 -->
-            <div class="is-size-4 author-list">
-              <span class="author-block">
-                <a href="https://yueyang130.github.io/" class="author-name">Yang Yue</a><sup class="affiliation">1</sup><sup class="contribution">*</sup><sup class="contribution">†</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://zhiqichen05.github.io/" class="author-name">Zhiqi Chen</a><sup class="affiliation">1</sup><sup class="contribution">*</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://lr32768.github.io/" class="author-name">Rui Lu</a><sup class="affiliation">1</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://andrewzh112.github.io/" class="author-name">Andrew Zhao</a><sup class="affiliation">1</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://www.wzk.plus/" class="author-name">Zhaokai Wang</a><sup class="affiliation">2</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=Q9cLkdcAAAAJ&hl=en" class="author-name">Yang Yue</a><sup class="affiliation">1</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=rw6vWdcAAAAJ&hl=zh-TW" class="author-name">Shiji Song</a><sup class="affiliation">1</sup>
-              </span>
-              <span class="author-block">
-                and <a href="http://www.gaohuang.net/" class="author-name">Gao Huang</a><sup class="affiliation">1</sup><sup class="contribution">‡</sup>
-              </span>
-            </div>
-          
-            <!-- 机构信息 -->
-            <div class="institutions is-size-5">
-              <span class="institution"><sup>1</sup> Tsinghua University, LeapLab</span>
-              <span class="institution">&nbsp;&nbsp;</span> <!-- 间隔符 -->
-              <span class="institution"><sup>2</sup> Shanghai Jiao Tong University</span>
-            </div>
-          
-            <!-- 贡献说明 -->
-            <div class="contribution-notes is-size-5">
-              <span class="note"><sup>*</sup> Equal Contribution</span>
-              <span class="note">&nbsp;&nbsp;</span>
-              <span class="note"><sup>†</sup> Project Lead</span>
-              <span class="note">&nbsp;&nbsp;</span>
-              <span class="note"><sup>‡</sup> Corresponding Author</span>
-            </div>
-          
-            <div class="corresponding-authors is-size-5">
-              Correspond to: 
-              <a href="mailto:{le-y22,zq-chen23}@mails.tsinghua.edu.cn">
-                {le-y22,zq-chen23}@mails.tsinghua.edu.cn
-              </a>, 
-              <a href="mailto:gaohuang@tsinghua.edu.cn">
-                gaohuang@tsinghua.edu.cn
+    <div class="landing-shell">
+      <div class="landing-card">
+        <div class="hero-content">
+          <div class="hero-column hero-left">
+            <p class="landing-kicker">Limit of RLVR</p>
+            <h1 class="landing-title">Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?</h1>
+            <p class="landing-summary">
+              We systematically study Reinforcement Learning with Verifiable Rewards (RLVR) across math, coding, and vision benchmarks and uncover that RL fine-tuning enhances sampling efficiency without expanding the reasoning capacity already present in base models.
+            </p>
+            <ul class="landing-bullets">
+              <li>
+                <span class="landing-bullet-icon">
+                  <i class="fa-solid fa-chart-line"></i>
+                </span>
+                <div>
+                  <strong>Base models surpass RL at large pass@k.</strong> RL-trained variants shine at low sampling budgets, yet the original base models consistently overtake them as k increases.
+                </div>
+              </li>
+              <li>
+                <span class="landing-bullet-icon">
+                  <i class="fa-solid fa-route"></i>
+                </span>
+                <div>
+                  <strong>RL narrows exploration.</strong> rewarded trajectories are amplified, but the broader solution space shrinks, revealing that RLVR optimizes within, rather than beyond, the base distribution.
+                </div>
+              </li>
+              <li>
+                <span class="landing-bullet-icon">
+                  <i class="fa-solid fa-layer-group"></i>
+                </span>
+                <div>
+                  <strong>Current RL algorithms plateau.</strong> PPO, GRPO, and Reinforce++ behave similarly and remain far from the optimal sampling efficiency achieved by broader strategies such as distillation.
+                </div>
+              </li>
+            </ul>
+            <div class="landing-buttons">
+              <a href="https://arxiv.org/pdf/2504.13837" class="landing-button">
+                <span class="landing-button-icon">
+                  <i class="fa-solid fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+              <a href="https://arxiv.org/abs/2504.13837" class="landing-button">
+                <span class="landing-button-icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+              <a href="https://github.com/LeapLabTHU/limit-of-RLVR" class="landing-button">
+                <span class="landing-button-icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
               </a>
             </div>
           </div>
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2504.13837"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <!-- <i class="fas fa-file-pdf"></i> -->
-                      <i class="fa-solid fa-file-pdf" style="color: #ec4646;"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <!-- Arxiv Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2504.13837"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/LeapLabTHU/limit-of-RLVR"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>GitHub</span>
-                  </a>
-              </span>
-              <!-- Dataset Link. -->
-              <!-- <span class="link-block">
-                <a href="https://huggingface.co/datasets/BytedTsinghua-SIA/DAPO-Math-17k"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fa-regular fa-database"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
-              </span> -->
-              <!-- Model Link. -->
-              <!-- <span class="link-block">
-                <a href="https://huggingface.co/BytedTsinghua-SIA/DAPO-Qwen-32B"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"> -->
-                    <!-- <i class="fa-solid fa-face-smiling-hands"></i> -->
-                    <!-- <i class="fa-solid fa-face-smiling-hands" style="color: #FFD43B;"></i>
-                  </span>
-                  <span>Model</span>
-                  </a>
-              </span> -->
+          <div class="hero-column hero-right">
+            <div class="landing-image-frame video-frame">
+              <video autoplay loop muted playsinline>
+                <source src="./static/video/introvideo.mp4" type="video/mp4">
+                <source src="./static/video/introvideo.webm" type="video/webm">
+                Your browser does not support the video tag.
+              </video>
             </div>
-
+            <p class="landing-video-caption">
+              Video: pass@<i>k</i> curves of base models and their zero-RL-trained counterparts across multiple mathematical benchmarks. 
+              When <i>k</i> is small, RL-trained models outperform their base versions. However, as <i>k</i> increases to the tens or hundreds, 
+              base models consistently catch up with RL-trained models across all benchmarks and LLM families without exception. 
+              Eventually, base models surpass RL-trained models.
+            </p>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section landing-authors">
+  <div class="container is-max-desktop">
+    <div class="landing-authors-card has-text-centered">
+      <h2 class="title is-4 landing-paper-venue">
+        NeurIPS 2025 Oral
+      </h2>
+      <h2 class="title is-4 landing-paper-venue">
+        ICML 2025 Workshop AI4Math Best Paper Award
+      </h2>
+      <div class="publication-authors">
+          <!-- 作者列表 -->
+        <div class="is-size-4 author-list">
+          <span class="author-block">
+            <a href="https://yueyang130.github.io/" class="author-name">Yang Yue</a><sup class="affiliation">1</sup><sup class="contribution">*</sup><sup class="contribution">†</sup>
+          </span>
+          <span class="author-block">
+            <a href="https://zhiqichen05.github.io/" class="author-name">Zhiqi Chen</a><sup class="affiliation">1</sup><sup class="contribution">*</sup>
+          </span>
+          <span class="author-block">
+            <a href="https://lr32768.github.io/" class="author-name">Rui Lu</a><sup class="affiliation">1</sup>
+          </span>
+          <span class="author-block">
+            <a href="https://andrewzh112.github.io/" class="author-name">Andrew Zhao</a><sup class="affiliation">1</sup>
+          </span>
+          <span class="author-block">
+            <a href="https://www.wzk.plus/" class="author-name">Zhaokai Wang</a><sup class="affiliation">2</sup>
+          </span>
+          <span class="author-block">
+            <a href="https://scholar.google.com/citations?user=Q9cLkdcAAAAJ&hl=en" class="author-name">Yang Yue</a><sup class="affiliation">1</sup>
+          </span>
+          <span class="author-block">
+            <a href="https://scholar.google.com/citations?user=rw6vWdcAAAAJ&hl=zh-TW" class="author-name">Shiji Song</a><sup class="affiliation">1</sup>
+          </span>
+          <span class="author-block">
+            and <a href="http://www.gaohuang.net/" class="author-name">Gao Huang</a><sup class="affiliation">1</sup><sup class="contribution">‡</sup>
+          </span>
+        </div>
+      
+        <!-- 机构信息 -->
+        <div class="institutions is-size-5">
+          <span class="institution"><sup>1</sup> Tsinghua University, LeapLab</span>
+          <span class="institution">&nbsp;&nbsp;</span> <!-- 间隔符 -->
+          <span class="institution"><sup>2</sup> Shanghai Jiao Tong University</span>
+        </div>
+      
+        <!-- 贡献说明 -->
+        <div class="contribution-notes is-size-5">
+          <span class="note"><sup>*</sup> Equal Contribution</span>
+          <span class="note">&nbsp;&nbsp;</span>
+          <span class="note"><sup>†</sup> Project Lead</span>
+          <span class="note">&nbsp;&nbsp;</span>
+          <span class="note"><sup>‡</sup> Corresponding Author</span>
+        </div>
+      
+        <div class="corresponding-authors is-size-5">
+          Correspond to: 
+          <a href="mailto:{le-y22,zq-chen23}@mails.tsinghua.edu.cn">
+            {le-y22,zq-chen23}@mails.tsinghua.edu.cn
+          </a>, 
+          <a href="mailto:gaohuang@tsinghua.edu.cn">
+            gaohuang@tsinghua.edu.cn
+          </a>
         </div>
       </div>
     </div>
@@ -204,29 +218,6 @@
     </div>
   </div>
 </section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Video -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="subtitle has-text-centered">
-          <video autoplay loop muted playsinline style="max-width: 100%;">
-            <source src="./static/video/introvideo.mp4" type="video/mp4">
-            <source src="./static/video/introvideo.webm" type="video/webm">
-            Your browser does not support the video tag.
-          </video>
-        </h2>
-        <p style="font-size: 0.8rem;">
-          Video: pass@<i>k</i> curves of base models and their zero-RL-trained counterparts across multiple mathematical benchmarks. <br>
-          When <i>k</i> is small, RL-trained models outperform their base versions. However, as <i>k</i> increases to the tens or hundreds, <br>
-          base models consistently catch up with RL-trained models across all benchmarks and LLM families without exception. <br>
-          Eventually, base models surpass RL-trained models.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>    
 
 <section class="section">
   <div class="container is-max-desktop">
