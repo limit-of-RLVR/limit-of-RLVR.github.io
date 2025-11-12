@@ -500,7 +500,7 @@
               <span class="q-icon">Q</span>
             </div>
             <h3 class="question-text">
-              Does your paper claim that RL can't incentivize reasoning beyond the base model?
+              Is the training model too small in your experiment?
             </h3>
           </div>
           <div class="qa-answer">
@@ -508,9 +508,8 @@
               <span class="a-icon">A</span>
             </div>
             <div class="answer-text">
-              <p>
-                No, we're not making such a strong claim. Our goal is to <b>present systematic experiments and analyses</b> to explore the question: <i>"Does RL truly expand reasoning capacity in LLMs?"</i> and hope bring some new insights for the community. <br>
-                We don't rule out the possibility that <b>scaling up model size and training data</b> could change the outcome. In fact, we're currently working on <b>DeepSeek-V3-base vs. R1-zero</b> to investigate this further.              
+              <p>           
+                In camera-ready, we include preliminary scaling experiments using <b>Magistral</b>, <b>a near-frontier pure RLVR model</b>, and the conclusion remains consistent. But it's still a open problem that if we scale RLVR compute to 10–1000× of Magistral, would it actually produce new knowledge beyond pretraining?
               </p>
             </div>
           </div>
@@ -560,6 +559,30 @@
                 In contrast, Our work systematically investigates this across <b>true base models</b> in a <b>zero-RL setting</b>, covering <b>multiple LLM families</b> and <b>a wider range of benchmarks</b>. <br>
                 We also dive further by providing <b>deeper analyses</b>—including <b>perplexity trends</b>, <b>different RL algorithms</b>, and evaluation against distilled models—offering a more comprehensive view of RLVR's capabilities and limitations. <br>
                 We believe the fact that <b>the reasoning scope of RLVR models is bounded by the base model</b> is a notable phenomenon that deserves deeper attention.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Q&A Item 8 -->
+        <div class="qa-card">
+          <div class="qa-question">
+            <div class="q-marker">
+              <span class="q-number">08</span>
+              <span class="q-icon">Q</span>
+            </div>
+            <h3 class="question-text">
+              <b>Do your conclusions contradict those in ProRL and AceReason-Nemotron?</b>
+            </h3>
+          </div>
+          <div class="qa-answer">
+            <div class="a-marker">
+              <span class="a-icon">A</span>
+            </div>
+            <div class="answer-text">
+              <p>
+                FYI: Following paper <a href="https://arxiv.org/abs/2507.14843" class="section-link section-text-large">invisible leash</a> also tested Nvidia's proRL v1, v2 and AceReason-Nemotron. <b>The same observations that base surpasses RL on both math and coding tasks.</b>
               </p>
             </div>
           </div>
