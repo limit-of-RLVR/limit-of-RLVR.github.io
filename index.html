@@ -225,6 +225,87 @@
   </div>
 </section>
 
+<section class="section themed-section preface-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths section-card preface-card">
+        <div class="preface-header">
+          <span class="preface-badge">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            Read This First
+          </span>
+          <h2 class="title is-3 section-title">Before You Read</h2>
+        </div>
+        <div class="content has-text-justified section-body">
+          <p class="section-text">
+            Thank you for visiting our website and reading our paper! If you are already familiar with the paper or have questions about its conclusions, you may start with this section. If not, we recommend reading the main content first, then returning here.
+          </p>
+          <div class="preface-highlight">
+            <p class="section-text preface-highlight-title">
+              Why Study the Capability Boundary Under Multiple Sampling?
+            </p>
+            <p class="section-text">
+              This paper does not focus on user experience or practical utility, but rather on the limits of model capability. A key question we ask is: since RL is often viewed as a core pathway toward stronger models, can RL training alone one day enable models to solve open problems, such as mathematical proofs or biological discoveries, that the base model and human cannot? Other paradigms, such as AlphaEvolve, have already demonstrated the ability to achieve breakthroughs on open problems previously unsolved by humans.
+            </p>
+          </div>
+          <div class="preface-callout">
+            <p class="section-text section-emphasis preface-callout-title">
+              Our Core Conclusion
+            </p>
+            <p class="section-text">
+              Current RLVR methods (specifically those using binary 0/1 rewards) do not appear to teach models fundamentally new reasoning abilities. Instead, they primarily amplify reasoning capabilities that already exist within the base model. The observed performance gains (e.g., in avg@n) mostly arise from improved sampling efficiency. A key piece of evidence is that RL models rarely solve problems that the base model cannot solve at all.
+            </p>
+          </div>
+          <div class="preface-insight">
+            <p class="section-text preface-highlight-title">
+              The Intuition Behind This
+            </p>
+            <p class="section-text">
+              Effective exploration in the vast language space is extremely difficult. If the base model cannot sample correct solutions, then under a 0/1 reward scheme, RL receives no useful gradient signal—thus, it cannot learn better strategies. In such settings, the RL-trained model naturally struggles to surpass the base model.
+            </p>
+          </div>
+          <div class="preface-clarification">
+            <p class="section-text preface-highlight-title">
+              This Is Not a Rejection of the RL Paradigm
+            </p>
+            <p class="section-text">
+              The above intuition applies only to the 0/1 reward setting, especially GRPO-style methods that omit a value network. In a broader RL context, there are still many promising directions to break the limit:
+            </p>
+            <ol class="preface-list">
+              <li>
+                <span class="preface-list-title">Dense / process rewards</span>
+                <span class="preface-list-text">provide partial learning signals even when the full solution isn’t reached;</span>
+              </li>
+              <li>
+                <span class="preface-list-title">Credit assignment</span>
+                <span class="preface-list-text">via value networks, reward intermediate reasoning steps;</span>
+              </li>
+              <li>
+                <span class="preface-list-title">Data (env) scale and curriculum learning</span>
+                <span class="preface-list-text">use larger, dynamic data so the model can progress from simpler subproblems to harder ones;</span>
+              </li>
+              <li>
+                <span class="preface-list-title">Stronger exploration mechanisms</span>
+                <span class="preface-list-text">move beyond token-level sampling;</span>
+              </li>
+              <li>
+                <span class="preface-list-title">Agent frameworks</span>
+                <span class="preface-list-text">extend capability boundaries through tool use and external information retrieval.</span>
+              </li>
+            </ol>
+            <p class="section-text">
+              While these directions are theoretically promising, none have yet worked reliably in practice. We hope the community will continue advancing these ideas.
+            </p>
+          </div>
+          <p class="section-footnote preface-footnote">
+            If you still have questions—such as about the “monkey-typing” analogy (infinity sampling), lucky guessing, whether RL is useful at all, or whether the training scale was sufficient, please refer to the Q&amp;A section below for detailed explanations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section themed-section">
   <div class="container is-max-desktop">
     <!-- Abstract -->
