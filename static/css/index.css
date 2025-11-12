@@ -1,3 +1,24 @@
+.qa-answer-toggle-text {
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.qa-toggle-hide {
+  display: none;
+}
+
+.qa-answer-details[open] .qa-toggle-show {
+  display: none;
+}
+
+.qa-answer-details[open] .qa-toggle-hide {
+  display: inline;
+}
+
+.qa-answer-details[open] .qa-answer-toggle-text {
+  color: var(--theme-accent);
+}
+
 .poster-section {
   background: linear-gradient(180deg, rgba(11, 64, 112, 0.08) 0%, rgba(241, 102, 115, 0.08) 100%);
   padding: 0;
@@ -1070,6 +1091,117 @@ body {
   border-radius: 18px;
   position: relative;
   border: 1px solid rgba(11, 64, 112, 0.08);
+}
+
+.qa-answer-details {
+  flex: 1;
+  display: block;
+}
+
+.qa-answer-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  cursor: pointer;
+  position: relative;
+  padding: 0.45rem 0.65rem;
+  border-radius: 16px;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.qa-answer-summary::-webkit-details-marker {
+  display: none;
+}
+
+.qa-answer-summary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.4);
+}
+
+.qa-answer-preview {
+  position: relative;
+  flex: 1;
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: rgba(75, 92, 114, 0.88);
+  padding-right: 1.5rem;
+}
+
+.qa-answer-preview::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.75) 65%, rgba(255, 255, 255, 1) 100%);
+}
+
+.qa-answer-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.4rem 1rem 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(241, 102, 115, 0.16);
+  color: var(--theme-secondary);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: inset 0 0 0 1px rgba(241, 102, 115, 0.22);
+}
+
+.qa-answer-toggle::after {
+  content: "\f078";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.75rem;
+}
+
+.qa-answer-details[open] .qa-answer-toggle {
+  background: rgba(0, 188, 212, 0.16);
+  color: var(--theme-accent);
+  box-shadow: inset 0 0 0 1px rgba(0, 188, 212, 0.25);
+}
+
+.qa-answer-details[open] .qa-answer-toggle::after {
+  content: "\f077";
+}
+
+.qa-answer-details[open] .qa-answer-preview {
+  color: var(--theme-text-muted);
+  padding-right: 0;
+  display: none;
+}
+
+.qa-answer-details[open] .qa-answer-preview::after {
+  opacity: 0;
+}
+
+.qa-answer-details[open] .qa-answer-body {
+  margin-top: 1.2rem;
+}
+
+.qa-answer-summary:hover {
+  background: rgba(241, 102, 115, 0.1);
+  transform: translateY(-1px);
+}
+
+.qa-answer-summary:hover .qa-answer-preview {
+  color: rgba(75, 92, 114, 1);
+}
+
+.qa-answer-summary:hover .qa-answer-toggle {
+  background: rgba(241, 102, 115, 0.22);
+  box-shadow: inset 0 0 0 1px rgba(241, 102, 115, 0.28), 0 10px 18px rgba(241, 102, 115, 0.18);
+}
+
+.qa-answer-summary:hover .qa-answer-toggle-text {
+  color: var(--theme-secondary);
 }
 
 .answer-text {
