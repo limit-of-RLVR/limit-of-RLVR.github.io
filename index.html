@@ -653,19 +653,26 @@
             The responses from the base model tend to be long CoTs and exhibit reflective behavior, 
             highlighting the strong reasoning ability inherent in the base model.
           </p>
-          <h3 class="title is-4 section-subtitle">Example</h3>
-          <h2 class="subtitle has-text-centered">
-            <img src="./static/images/AIME24_16_Base_Answer.png" class="section-image section-image-full" />
-          </h2>
-          <p class="section-text">
-            <a href="https://arxiv.org/abs/2505.16400" class="section-link section-text-large">AceReason-Nemotron</a> reported that after conducting 64 samples, their RL-trained model successfully solved four problems (No. <b>3</b>, <b>14</b>, <b>29</b>, and <b>30</b>) from the AIME24 dataset that DeepSeek-R1-Distill-Qwen-7B (base model in their RL training) failed to solve. While their RL-trained model is well-trained and impressively powerful, our findings suggest that the base model itself still exhibits considerable potential. With increased sampling, we observed that these four problems can indeed be solved by the base model: Problem No. <b>3</b> was solved after 5120 samples, and Problems No. <b>14</b>, <b>29</b>, and <b>30</b> were solved within 1024 samples. For each case, we provide representative examples of correct Chains of Thought (CoTs) and corresponding final answers:
-          </p>
-          <h2 class="subtitle has-text-centered section-embed">
-            <iframe src="./Q4.html" width="100%" height="2950px" class="section-iframe"></iframe>
-          </h2>
-          <p class="section-footnote">
-            Condensed: The process of consecutive reflective contents starting with "Wait," which are long and similar in the CoT, is summarized and abridged for better readability.
-          </p>
+          <details class="case-details">
+            <summary class="case-summary">
+              <span class="case-summary-text">Explore the full case study</span>
+            </summary>
+            <div class="case-details-content">
+              <h3 class="title is-4 section-subtitle">Example</h3>
+              <h2 class="subtitle has-text-centered">
+                <img src="./static/images/AIME24_16_Base_Answer.png" class="section-image section-image-full" />
+              </h2>
+              <p class="section-text">
+                <a href="https://arxiv.org/abs/2505.16400" class="section-link section-text-large">AceReason-Nemotron</a> reported that after conducting 64 samples, their RL-trained model successfully solved four problems (No. <b>3</b>, <b>14</b>, <b>29</b>, and <b>30</b>) from the AIME24 dataset that DeepSeek-R1-Distill-Qwen-7B (base model in their RL training) failed to solve. While their RL-trained model is well-trained and impressively powerful, our findings suggest that the base model itself still exhibits considerable potential. With increased sampling, we observed that these four problems can indeed be solved by the base model: Problem No. <b>3</b> was solved after 5120 samples, and Problems No. <b>14</b>, <b>29</b>, and <b>30</b> were solved within 1024 samples. For each case, we provide representative examples of correct Chains of Thought (CoTs) and corresponding final answers:
+              </p>
+              <h2 class="subtitle has-text-centered section-embed">
+                <iframe src="./Q4.html" width="100%" height="2950px" class="section-iframe"></iframe>
+              </h2>
+              <p class="section-footnote">
+                Condensed: The process of consecutive reflective contents starting with "Wait," which are long and similar in the CoT, is summarized and abridged for better readability.
+              </p>
+            </div>
+          </details>
         </div>
       </div>
     </div>
